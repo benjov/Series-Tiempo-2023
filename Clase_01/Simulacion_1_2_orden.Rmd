@@ -39,7 +39,7 @@ Diff_Eq$Process_2 <- 2*(1 - (-0.5)^Diff_Eq$Tiempo)/(1 + 0.5) + ((-0.5)^Diff_Eq$T
 ```{r}
 ggplot(data = Diff_Eq, 
        aes(x = Tiempo, y = Process_1)) + 
-  geom_line(size = 0.5, color = "darkblue") +
+  geom_line(linewidth = 0.5, color = "darkblue") +
   geom_point(size = 1.0, color = "darkblue") + 
   #theme_bw() + 
   theme(legend.position = "none") +
