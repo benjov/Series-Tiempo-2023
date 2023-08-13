@@ -130,7 +130,7 @@ S2
 # Agregamos al data frame una columna SU_t que llenamos de ceros (0)
 U$SU_t <- replicate(Periodos, 0)
 
-View(U)
+#View(U)
 ```
 
 El siguiente ciclo recorre el data frame para ir acumulando los valores de U_t y colocando el valor acumulado en SU_t
@@ -141,7 +141,7 @@ for(i in 1:Periodos){
   U$SU_t[i] <- sum( U$U_t[1:i] )
 }
 
-View(U)
+#View(U)
 
 ```
 

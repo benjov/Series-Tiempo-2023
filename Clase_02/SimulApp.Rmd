@@ -1,7 +1,7 @@
 ---
-title: "Simulación de procesos estocásticos"
+title: "Simulación de procesos estocásticos (URL: https://benjov.shinyapps.io/Moneda/)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "18/9/2021"
+date: "18/08/2023"
 output: html_document
 runtime: shiny
 ---

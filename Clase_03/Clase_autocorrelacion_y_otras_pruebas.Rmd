@@ -1,7 +1,7 @@
 ---
 title: "Clase 3. Autocorrelacion y otras pruebas sobre los datos"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "21/9/2021"
+date: "21/8/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -31,7 +31,7 @@ Los datos importados son:
 * Vue_Int: Vuelos u operaciones (Salidas) en vuelos internacionales
 * Pax_Metro: Pasajeros transportados (Millones) en el SCM
 
-Fuente: INEGI, https://www.inegi.org.mx/app/indicadores/?tm=0&t=1090
+Fuente: INEGI, https://www.inegi.org.mx/app/indicadores/?tm=0#D668903
 
 ```{r}
 
@@ -45,7 +45,7 @@ head(Datos)
 
 ```{r}
 
-View(Datos)
+#View(Datos)
 
 names(Datos)
 
@@ -237,14 +237,14 @@ Tabla_Pax_Metro
 
 Tabla_Pax_Metro[1, 2] <- round(mean(Pax_Metro), digits = 2)
 Tabla_Pax_Metro[2, 2] <- round(var(Pax_Metro), digits = 2)
-Tabla_Pax_Metro[3, 2] <- round(cov(Pax_Metro[2:234], Pax_Metro[1:233]), digits = 2)
-Tabla_Pax_Metro[4, 2] <- round(cov(Pax_Metro[3:234], Pax_Metro[1:232]), digits = 2)
-Tabla_Pax_Metro[5, 2] <- round(cov(Pax_Metro[4:234], Pax_Metro[1:231]), digits = 2)
+Tabla_Pax_Metro[3, 2] <- round(cov(Pax_Metro[2:281], Pax_Metro[1:280]), digits = 2)
+Tabla_Pax_Metro[4, 2] <- round(cov(Pax_Metro[3:281], Pax_Metro[1:279]), digits = 2)
+Tabla_Pax_Metro[5, 2] <- round(cov(Pax_Metro[4:281], Pax_Metro[1:278]), digits = 2)
 Tabla_Pax_Metro[6, 2] <- round(Tabla_Pax_Metro[3, 2]/Tabla_Pax_Metro[2, 2], digits = 2)
 Tabla_Pax_Metro[7, 2] <- round(Tabla_Pax_Metro[4, 2]/Tabla_Pax_Metro[2, 2], digits = 2)
 Tabla_Pax_Metro[8, 2] <- round(Tabla_Pax_Metro[5, 2]/Tabla_Pax_Metro[2, 2], digits = 2)
-Tabla_Pax_Metro[9, 2] <- round(234*(Tabla_Pax_Metro[6, 2]^2), digits = 2)
-Tabla_Pax_Metro[10, 2] <- round(234*(Tabla_Pax_Metro[6, 2]^2 +
+Tabla_Pax_Metro[9, 2] <- round(281*(Tabla_Pax_Metro[6, 2]^2), digits = 2)
+Tabla_Pax_Metro[10, 2] <- round(281*(Tabla_Pax_Metro[6, 2]^2 +
                                Tabla_Pax_Metro[7, 2]^2 +
                                Tabla_Pax_Metro[8, 2]^2), digits = 2)
 
