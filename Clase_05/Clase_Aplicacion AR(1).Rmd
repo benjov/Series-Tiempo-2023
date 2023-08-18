@@ -1,7 +1,7 @@
 ---
 title: "Clase 5. Aplicacion AR(1)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "21/9/2021"
+date: "21/9/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -44,7 +44,7 @@ head(Datos)
 ```
 
 
-# Conversion a series de tiempo:
+# Conversión a series de tiempo:
 
 Una serie - caso univariado:
 
@@ -53,26 +53,22 @@ Una serie - caso univariado:
 # En Niveles
 Dat_Aereo <- ts(Datos[c("Pax_Nal", "Pax_Int", "Vue_Nal", "Vue_Int")], 
                 start = c(2000, 1), 
-                end = c(2022, 6), 
                 freq = 12)
 
 Pax_Metro <- ts(Datos$Pax_Metro, start = c(2000, 1), 
-                end = c(2022, 6), 
                 freq = 12)
 
 # En Logaritmos:
 Dat_LAereo <- ts(log(Datos[c("Pax_Nal", "Pax_Int", "Vue_Nal", "Vue_Int")]), 
                 start = c(2000, 1), 
-                end = c(2022, 6), 
                 freq = 12)
 
 Pax_LMetro <- ts(log(Datos$Pax_Metro), start = c(2000, 1), 
-                end = c(2022, 6), 
                 freq = 12)
 
 # Diferencias mensuales:
 
-Pax_DLMetro <- ts( log(Datos$Pax_Metro) - lag(log(Datos$Pax_Metro), k = 1),
+Pax_DLMetro <- ts( log(Datos$Pax_Metro) - lag( log(Datos$Pax_Metro), 1 ),
                  start = c(2000, 1), freq = 12)
 
 ```
