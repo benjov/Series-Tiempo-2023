@@ -67,7 +67,7 @@ LPax_Nal <- ts(log(Datos$Pax_Nal),
                start = c(2000, 1), 
                freq = 12)
 
-DLPax_Nal <- ts(log(Datos$Pax_Nal) - lag(log(Datos$Pax_Nal), k = 1),
+DLPax_Nal <- ts(log(Datos$Pax_Nal) - lag(log(Datos$Pax_Nal), 1),
                 start = c(2000, 1), 
                 freq = 12)
 
@@ -226,8 +226,8 @@ Pronostico_Arima <- read_excel("Pronostico_Arima.xlsx", sheet = "Datos", col_nam
 Pronostico_Arima$Pax_Nal_f <- Pronostico_Arima$Pax_Nal
 
 for(i in 1:24){
-  Pronostico_Arima$Pax_Nal_f[270 + i] <- 
-    Pronostico_Arima$Pax_Nal_f[270 + i - 1]*(1 + DLPax_Nal_f$pred[i])
+  Pronostico_Arima$Pax_Nal_f[281 + i] <- 
+    Pronostico_Arima$Pax_Nal_f[281 + i - 1]*(1 + DLPax_Nal_f$pred[i])
 }
 
 View(Pronostico_Arima)

@@ -1,7 +1,7 @@
 ---
 title: "Clase 7. Aplicacion AR(p)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "21/9/2021"
+date: "21/9/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -56,7 +56,7 @@ source("plot.armaroots.R")
 # Conversion a series de tiempo:
 
 ```{r}
-
+# En Niveles
 Pax_Int <- ts(Datos$Pax_Int, 
               start = c(2000, 1), 
               freq = 12)
@@ -67,7 +67,7 @@ LPax_Int <- ts(log(Datos$Pax_Int),
                freq = 12)
 
 # Diferencias mensuales:
-DLPax_Int <- ts(log(Datos$Pax_Int) - lag(log(Datos$Pax_Int), k = 1),
+DLPax_Int <- ts(log(Datos$Pax_Int) - lag(log(Datos$Pax_Int), 1),
                 start = c(2000, 1), 
                 freq = 12)
 

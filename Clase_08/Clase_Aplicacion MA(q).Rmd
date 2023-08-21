@@ -1,7 +1,7 @@
 ---
 title: "Clase 8. Aplicacion MA(q)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "30/9/2021"
+date: "30/9/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -72,7 +72,7 @@ LPax_Metro <- ts(log(Datos$Pax_Metro),
                  start = c(2000, 1), 
                  freq = 12)
 
-DLPax_Metro <- ts(log(Datos$Pax_Metro) - lag(log(Datos$Pax_Metro), k = 1),
+DLPax_Metro <- ts(log(Datos$Pax_Metro) - lag(log(Datos$Pax_Metro), 1),
                   start = c(2000, 1), 
                   freq = 12)
 
