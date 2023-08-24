@@ -1,4 +1,4 @@
-# Series de Tiempo, Agosto de 2021
+# Series de Tiempo, Agosto de 2023
 # Clase 0.5. Introduccion
 
 #****************************************************************************************
