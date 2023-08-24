@@ -7,10 +7,10 @@ output: html_document
 
 ## Algunas reglas importantes:
 
-1.  R es case sensitive, lo que significa que **distingue entre minusculas y mayusculas**
+1.  R es case sensitive, esto significa que **distingue entre minusculas y mayusculas**
 2.  Para escribir pedazos de código, es necesario hacerlo entre
 
-```{r}
+```{r warning=FALSE}
 #```{r}
 #```
 ```
@@ -60,7 +60,7 @@ Un tipo muy peculiar de objeto son las funciones, ya que estos objetos operan so
 class(class)
 ```
 
-Lo que declaramos dentro de la función se conoce como argumentos, que basicamente nos ayudan a definir sobre qué objeto debe operar la función y el modo en que queremos que actúe. En muchos casos algunos argumentos están obviados, pero es posible ajustarlos a lo que deseamos.
+Lo que declaramos dentro de la función se conoce como argumentos, donde básicamente definicmos sobre qué objeto debe operar la función y el modo en que queremos que actúe. En la mayoría de funciones, a menos de que seamos específicos, el programa dará por hecho algunos argumentos.
 
 ```{r}
 pi
@@ -110,12 +110,12 @@ secuencia = 1:10
 secuencia %in% 3
 ```
 
-### Arreglos de datos de multiples datos
+### Arreglos de datos de una y multiple clase de objetos
 
-Generalmente necesitamos utilizar objetos que contengan multiples datos, para este efecto existen los vectores y las columnas, en ambos casos los podemos generar con la función **c()** (combine) que nos ayuda a combinar distintos objetos dentro de uno solo:
+Generalmente necesitamos utilizar objetos que contengan multiples datos, para este efecto existen los vectores y las listas, en ambos casos los podemos generar con la función **c()** (combine) que nos ayuda a combinar distintos objetos dentro de uno solo:
 
 -   vector: objetos que sólo pueden contener un tipo de datos y guardan la clase de datos de los elementos, los conseguimos con la función *c()* (combine).
--   list: objetos que pueden contener multiples tipos de datos, son objetos de tipo *list* y los generamos con la función que leva este nombre(list())
+-   list: objetos que pueden contener multiples tipos de datos, son objetos de tipo *list* y los generamos con la función que lleva este nombre(list())
 
 ```{r}
 secuencia = c(1,2,3,"R")
@@ -126,7 +126,7 @@ class(fruta)
 
 ## Arreglos de datos bidimensionales
 
-Los tipos de objetos que se observan en el apartado anterior tienen la característica de ser arreglos de datos de una sóla dimensión. Para los fines de esta clase, con mayor frecuencia utilizaremos arreglos bidimencionales (con filas y columnas). Los objetos de este tipo más utilizados son las matrices y los data frames
+Los tipos de objetos que se observan en el apartado anterior tienen la característica de ser arreglos de datos de una sola dimensión. Para los fines de esta clase, con mayor frecuencia utilizaremos arreglos bidimencionales (con filas y columnas). Los objetos de este tipo más utilizados son las matrices y los data frames
 
 -   matrix: objetos bidimensionales que sólo son capaces de tener un solo tipo de datos.
 -   DataFrame: arreglos bidimensionales que pueden contener distintos tipos de datos en cada columna.
@@ -172,7 +172,7 @@ legend(2,10,c("raíz cuadrada","raíz cúbica"), lwd=c(5,2), col=c("black","blue
 
 ```
 
-### librerias
+### librerías
 
 Del mismo modo en que nosotros somos capaces de escribir funciones nuevas, multiples usuarios constantemente crean o actualizan *librerias* para disminuir la cantidad de código que tiene que ser escrita. Básicamente las librerias ayudan a la comunidad de usuarios de R a tener mejores resultados sin tener que duplicar esfuerzos.
 
