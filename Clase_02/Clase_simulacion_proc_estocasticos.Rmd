@@ -104,7 +104,7 @@ Moneda <- function(R, Time){
 ```
 
 # Resutados: 
-Inputs / argumentos de la funcion, para el caso de lanzar una moneda
+Inputs / argumentos de la función, para el caso de lanzar una moneda
 
 ```{r}
 Resultados <- c(-1, 1)
@@ -149,7 +149,7 @@ for(i in 1:Periodos){
 
 ```{r, echo = FALSE}
 ggplot(data = U, aes( x = Tiempo, y = SU_t) ) + 
-  geom_line(size = 0.5, color = "darkblue") +
+  geom_line(linewidth = 0.5, color = "darkblue") +
   #geom_point(size = 1.0, color = "darkblue") + 
   #theme_bw() + 
   theme(legend.position = "none") +

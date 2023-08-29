@@ -4,7 +4,7 @@
 #****************************************************************************************
 getwd()
 # Cambiar la siguiente ruta dependiendo de la ubicación en sus equipos
-setwd("/Users/benjaminolivavazquez/Documents/Personal/Cursos_UNAM/SERIES_2023-I/Series-de-Tiempo-2022/Clase_00")
+setwd("/Users/benjamin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Personal/Cursos_UNAM/SERIES_2024-I/Series-Tiempo-2023/Clase_00")
 
 getwd()
 
@@ -135,7 +135,7 @@ par(mfrow=c(3,1))
 # Indicador Global de la Actividad Econ?mica, base 2008
 plot(diff(log(IGAE_2013), lag = 1), type = "l", lwd = 1, col = "red", ylab = "Var. %", xlab = "Tiempo", main = "Indicador Global de la Actividad Economica") 
 # Indice de Precios y Cotizaciones de la Bolsa Mexicana de Valores
-plot(diff(log(IPC_BMV), lag = 1), type = "l", lwd = 1, col = "red", ylab = "Var. %", xlab = "Tiempo", main = "Indice de Precios y Cotizaciones BMV")
+plot(diff(log(IPC_BMV), lag = 1), type = "l", lwd = 1, col = "darkgreen", ylab = "Var. %", xlab = "Tiempo", main = "Indice de Precios y Cotizaciones BMV")
 # Tipo de Cambio para Solventar Obligaciones en Moneda Extranjera
 plot(diff(log(TDC), lag = 1), type = "l", lwd = 1, col = "blue", ylab = "Pesos X Dolar", xlab = "Tiempo", main = "Tipo de Cambio")
 par(mfrow=c(1,1))

@@ -58,7 +58,7 @@ ggplot(data = Diff_Eq,
 ```{r}
 ggplot(data = Diff_Eq, 
        aes(x = Tiempo, y = Process_2)) + 
-  geom_line(size = 0.5, color = "red") +
+  geom_line(linewidth = 0.5, color = "red") +
   geom_point(size = 1.0, color = "red") + 
   #theme_bw() + 
   theme(legend.position = "none") +
