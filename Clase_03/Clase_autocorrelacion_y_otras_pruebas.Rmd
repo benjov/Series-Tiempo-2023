@@ -112,7 +112,7 @@ plot(Pax_Metro,
      xlab = "Tiempo",  
      type = "l", lwd = 2,
      ylab = "Millones de personas",
-     main = "Pasajeros Transportados en el Metro de la CDMX \n(Ene-2000 a Jul-2021)",
+     main = "Pasajeros Transportados en el Metro de la CDMX \n(Ene-2000 a May-2023)",
      sub = "Fuente: Elaboración propia con información del INEGI")
 
 ```
@@ -121,7 +121,7 @@ plot(Pax_Metro,
 ```{r, echo = FALSE}
 
 ggplot(data = Datos, aes(x = Periodo, y = Pax_Metro)) + 
-  geom_line(size = 0.5, color = "darkblue") +
+  geom_line(linewidth = 0.5, color = "darkblue") +
   #geom_point(size = 1.0, color = "darkblue") + 
   #theme_bw() + 
   xlab("Tiempo") + 

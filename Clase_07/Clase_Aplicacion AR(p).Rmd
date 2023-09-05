@@ -39,7 +39,7 @@ Fuente: INEGI, https://www.inegi.org.mx/app/indicadores/?tm=0&t=1090
 
 Datos <- read_excel("Base_Transporte.xlsx", sheet = "Datos", col_names = TRUE)
 
-head(Datos)
+tail(Datos)
 
 ```
 
@@ -129,7 +129,7 @@ plot.armaroots(arroots(AR_DLPax_Int),
 
 ```
 
-# # Función de Autocorrelación Parcial
+## Función de Autocorrelación Parcial
 
 ```{r}
 
