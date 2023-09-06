@@ -127,7 +127,7 @@ for (i in 2:(T + 1)) {
 ```{r, echo = FALSE}
 
 ggplot(data = X_t, aes(x = Tiempo, y = X_t)) + 
-  geom_line(size = 0.5, color = "darkblue") +
+  geom_line(linewidth = 0.5, color = "darkblue") +
   #theme_bw() + 
   xlab("Tiempo") + 
   ylab(TeX("$X_t$")) + 
