@@ -206,7 +206,7 @@ MA_LPax_Metro_2 <- arima(LPax_Metro, order = c(0, 0, 4),
 MA_LPax_Metro_2
 
 plot(MA_LPax_Metro_2$residuals,
-     main = "Residuales de un MA (4) de LN Pasajeros transportados (Millones) en el SCM",
+     main = "Residuales de un MA (4) con Dummies de \nLN Pasajeros transportados (Millones) en el SCM",
      ylab = "Residuals MA(q)", xlab = "Tiempo",
      col = "darkred")
 
@@ -219,15 +219,24 @@ plot.armaroots(maroots(MA_LPax_Metro_2),
 
 ```{r}
 
+# Serie
+plot(DLPax_Metro, xlab = "Tiempo", ylab = "DLN Pasajeros",
+     main = "Diff LN Pasajeros transportados \n(Millones) en el SCM", 
+     col = "darkblue")
+
+#
 par(mfrow=c(1,2))
 
-plot(MA_LPax_Metro$residuals,
-     main = "Sin Dummy",
-     ylab = "Residuals MA(q)")
-
 plot(MA_LPax_Metro_2$residuals,
-     main = "Con Dummy",
-     ylab = "Residuals MA(q) (2)")
+     main = "Residuales de un MA (4) con Dummies de \nLN Pasajeros transportados (Millones) en el SCM",
+     ylab = "Residuals MA(q)", xlab = "Tiempo",
+     col = "darkred")
+
+# Comparación
+plot(MA_LPax_Metro$residuals,
+     main = "Residuales de un MA (4) de \nLN Pasajeros transportados (Millones) en el SCM",
+     ylab = "Residuals MA(q)", xlab = "Tiempo",
+     col = "darkgreen")
 
 par(mfrow=c(1,1))
 

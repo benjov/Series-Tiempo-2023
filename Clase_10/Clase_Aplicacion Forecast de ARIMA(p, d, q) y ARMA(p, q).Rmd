@@ -1,7 +1,7 @@
 ---
 title: "Clase 10. Aplicacion Forecast de ARIMA(p, d, q) y ARMA(p, q)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "02/10/2021"
+date: "02/10/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -51,7 +51,7 @@ Fuente: INEGI, https://www.inegi.org.mx/app/indicadores/?tm=0&t=1090
 
 Datos <- read_excel("Base_Transporte_ARIMA.xlsx", sheet = "Datos", col_names = TRUE)
 
-head(Datos)
+tail(Datos)
 
 ```
 
@@ -162,39 +162,39 @@ head(Predict_Datos)
 ```{r}
 
 D_Mar2020_f	<- ts(Predict_Datos$D_Mar2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Abr2020_f	<- ts(Predict_Datos$D_Abr2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Jun2020_f	<- ts(Predict_Datos$D_Jun2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Jul2020_f <- ts(Predict_Datos$D_Jul2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Mar2021_f <- ts(Predict_Datos$D_Mar2021, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Ene_f <- ts(Predict_Datos$D_Ene, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)
 
 D_Feb_f <- ts(Predict_Datos$D_Feb, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)
 
 D_Jul_f <- ts(Predict_Datos$D_Jul, 
-           start = c(2022, 7), 
+           start = c(2023, 6), 
             freq = 12)
 
 D_Dic_f <- ts(Predict_Datos$D_Dic, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)
 
 ```

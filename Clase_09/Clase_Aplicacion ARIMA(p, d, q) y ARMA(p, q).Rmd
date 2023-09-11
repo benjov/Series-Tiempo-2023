@@ -51,7 +51,7 @@ Fuente: INEGI, https://www.inegi.org.mx/app/indicadores/?tm=0&t=1090
 
 Datos <- read_excel("Base_Transporte_ARIMA.xlsx", sheet = "Datos", col_names = TRUE)
 
-head(Datos)
+tail(Datos)
 
 ```
 
@@ -240,17 +240,6 @@ Lag_Opt_ARIMA_Exog(p_max = 6, q_max = 6,
 
 ```
 
-SIN variables exogenas:
-
-```{r}
-
-Lag_Opt_ARIMA_Exog(p_max = 6, q_max = 6, 
-                   X_t = DLPax_Nal, 
-                   Ex = 0,
-                   Z_t = cbind(D_Ene, D_Feb, D_Jul, D_Dic))
-
-```
-
 Estimacion:
 
 ```{r}
@@ -268,7 +257,7 @@ plot(ARMA_Ex_DLPax_Nal$residuals,
 ```
 
 # Nueva Estimacion del proceso ARIMA(p, 1, q):
-CON variables exogenas rezagos optimos:
+CON variables exogenas por ESTACIONALIDAD rezagos optimos:
 
 ```{r}
 

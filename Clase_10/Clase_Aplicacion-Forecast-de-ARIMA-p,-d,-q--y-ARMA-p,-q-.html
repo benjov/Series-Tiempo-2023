@@ -11,7 +11,7 @@
 
 <meta name="author" content="Benjamin Oliva &amp; Omar Alfaro-Rivera" />
 
-<meta name="date" content="2021-02-10" />
+<meta name="date" content="2023-02-10" />
 
 <title>Clase 10. Aplicacion Forecast de ARIMA(p, d, q) y ARMA(p, q)</title>
 
@@ -353,7 +353,7 @@ display: none;
 <h1 class="title toc-ignore">Clase 10. Aplicacion Forecast de ARIMA(p,
 d, q) y ARMA(p, q)</h1>
 <h4 class="author">Benjamin Oliva &amp; Omar Alfaro-Rivera</h4>
-<h4 class="date">02/10/2021</h4>
+<h4 class="date">02/10/2023</h4>
 
 </div>
 
@@ -387,16 +387,16 @@ internacionales</li>
 <p>Fuente: INEGI, <a href="https://www.inegi.org.mx/app/indicadores/?tm=0&amp;t=1090" class="uri">https://www.inegi.org.mx/app/indicadores/?tm=0&amp;t=1090</a></p>
 <pre class="r"><code>Datos &lt;- read_excel(&quot;Base_Transporte_ARIMA.xlsx&quot;, sheet = &quot;Datos&quot;, col_names = TRUE)
 
-head(Datos)</code></pre>
+tail(Datos)</code></pre>
 <pre><code>## # A tibble: 6 × 22
 ##   Periodo             Pax_Nal Pax_Int Vue_Nal Vue_Int Pax_Metro D_Sep2017
 ##   &lt;dttm&gt;                &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
-## 1 2000-01-01 00:00:00 1378244  672734   30290    7812      112.         0
-## 2 2000-02-01 00:00:00 1318075  649382   28291    7440      112.         0
-## 3 2000-03-01 00:00:00 1476646  750587   31031    8036      121.         0
-## 4 2000-04-01 00:00:00 1426550  718826   29896    7886      106.         0
-## 5 2000-05-01 00:00:00 1529293  663015   31382    7498      118.         0
-## 6 2000-06-01 00:00:00 1427266  633091   30514    7351      118.         0
+## 1 2022-12-01 00:00:00 5456045 2709516   39644   17827      90.0         0
+## 2 2023-01-01 00:00:00 5058367 2533314   38226   17747      87.3         0
+## 3 2023-02-01 00:00:00 4515723 2277995   33571   15756      86.7         0
+## 4 2023-03-01 00:00:00 5287795 2555185   37190   17796      99.4         0
+## 5 2023-04-01 00:00:00 5428414 2302621   37443   16325      86.6         0
+## 6 2023-05-01 00:00:00 5351191 2161952   37841   15519      96.5         0
 ## # ℹ 15 more variables: D_Oct2017 &lt;dbl&gt;, D_Feb2020 &lt;dbl&gt;, D_Mar2020 &lt;dbl&gt;,
 ## #   D_Abr2020 &lt;dbl&gt;, D_May2020 &lt;dbl&gt;, D_Jun2020 &lt;dbl&gt;, D_Jul2020 &lt;dbl&gt;,
 ## #   D_Ene2021 &lt;dbl&gt;, D_Mar2021 &lt;dbl&gt;, D_Ene &lt;dbl&gt;, D_Feb &lt;dbl&gt;, D_Jul &lt;dbl&gt;,
@@ -506,39 +506,39 @@ head(Predict_Datos)</code></pre>
 <div id="conversion-a-series-de-tiempo-1" class="section level1">
 <h1>Conversion a series de tiempo:</h1>
 <pre class="r"><code>D_Mar2020_f &lt;- ts(Predict_Datos$D_Mar2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Abr2020_f &lt;- ts(Predict_Datos$D_Abr2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Jun2020_f &lt;- ts(Predict_Datos$D_Jun2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Jul2020_f &lt;- ts(Predict_Datos$D_Jul2020, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Mar2021_f &lt;- ts(Predict_Datos$D_Mar2021, 
-                start = c(2022, 7), 
+                start = c(2023, 6), 
                 freq = 12)
 
 D_Ene_f &lt;- ts(Predict_Datos$D_Ene, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)
 
 D_Feb_f &lt;- ts(Predict_Datos$D_Feb, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)
 
 D_Jul_f &lt;- ts(Predict_Datos$D_Jul, 
-           start = c(2022, 7), 
+           start = c(2023, 6), 
             freq = 12)
 
 D_Dic_f &lt;- ts(Predict_Datos$D_Dic, 
-            start = c(2022, 7), 
+            start = c(2023, 6), 
             freq = 12)</code></pre>
 </div>
 <div id="prediccion-2-años-de-la-serie-en-diferencias" class="section level1">
