@@ -88,7 +88,7 @@ Recomendación: Clonar el repositorio y actualizar constantemente (git pull)
 
 ## 3. Carpeta de Google Drive para difusión de temario, tareas, exámenes y bibliografía: https://drive.google.com/drive/folders/1s6t4sxiqF8S_qWVTKlsZsfylt5TkpoDA?usp=sharing
 
-## 4. Pizarras de clase: https://us02web.zoom.us/wb/doc/6lIfMn9iToO88zxoThxu5A/p/138598107971584
+## 4. Pizarras de clase: https://cideo365-my.sharepoint.com/:o:/g/personal/benjamin_oliva_cide_edu/EkiD-D1zoQVFk4orfhHVi9EB59fQaIkTINDTczA_Nc57pg?e=PckXIM
 
 ## 5. Grabaciones de clase: https://www.youtube.com/playlist?list=PLlCKfRj1U6SzznpzKhJ_VmE7lEUeXJIwi
 
