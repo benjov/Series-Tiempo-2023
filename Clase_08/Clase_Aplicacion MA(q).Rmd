@@ -220,8 +220,8 @@ plot.armaroots(maroots(MA_LPax_Metro_2),
 ```{r}
 
 # Serie
-plot(DLPax_Metro, xlab = "Tiempo", ylab = "DLN Pasajeros",
-     main = "Diff LN Pasajeros transportados \n(Millones) en el SCM", 
+plot(LPax_Metro, xlab = "Tiempo", ylab = "DLN Pasajeros",
+     main = "LN Pasajeros transportados \n(Millones) en el SCM", 
      col = "darkblue")
 
 #

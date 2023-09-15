@@ -198,11 +198,11 @@ par(mfrow=c(1,1))
 
 par(mfrow=c(1,2))
 
-acf(DLPax_Nal[2:270], lag.max = 24,
+acf(DLPax_Nal[2:280], lag.max = 24,
     xlab = "Rezagos",
     main = "Diff LN Pasajeros Nacionales")
 
-pacf(DLPax_Nal[2:270], lag.max = 24, 
+pacf(DLPax_Nal[2:280], lag.max = 24, 
      xlab = 'Rezagos',
      main = "Diff LN Pasajeros Nacionales")
 
