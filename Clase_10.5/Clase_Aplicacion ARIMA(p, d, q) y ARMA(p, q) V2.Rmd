@@ -260,10 +260,9 @@ Lag_Opt_SARIMA_Exog(p_max = 4, q_max = 4,
 
 ```
 
-
 ```{r}
 
-SARIMA_Ex_DLPax_Nal <- arima(DLPax_Nal_S, order = c(1, 0, 4),
+SARIMA_Ex_DLPax_Nal <- arima(DLPax_Nal_S, order = c(4, 0, 4),
                              seasonal = c(0, 0, 2),
                            xreg = dumm_SARIMA,
                            method = "ML")
@@ -272,15 +271,29 @@ SARIMA_Ex_DLPax_Nal
 
 par(mfrow=c(1,2))
 plot.armaroots(arroots(SARIMA_Ex_DLPax_Nal), 
-               main="Inverse AR roots of \nAR(p): LN PAx Nal")
+               main="Inverse AR roots of \nAR(p): Diff LN PAx Nal")
 plot.armaroots(maroots(SARIMA_Ex_DLPax_Nal), 
-               main="Inverse AR roots of \nAR(p): LN PAx Nal")
+               main="Inverse MA roots of \nAR(p): Diff LN PAx Nal")
 par(mfrow=c(1,1))
 
 acf(SARIMA_Ex_DLPax_Nal$residuals, na.action = na.pass)
 
 plot(SARIMA_Ex_DLPax_Nal$residuals)
 
+
+```
+
+## Comparación
+
+```{r}
+
+par(mfrow=c(1,2))
+
+plot(ARIMA_Ex_DLPax_Nal$residuals)
+
+plot(SARIMA_Ex_DLPax_Nal$residuals)
+
+par(mfrow=c(1,1))
 
 ```
 
@@ -293,7 +306,7 @@ plot(SARIMA_Ex_DLPax_Nal$residuals)
 
 ```
 
-Implementación ARIMA:
+### Implementación ARIMA:
 
 ```{r}
 
@@ -310,7 +323,7 @@ checkresiduals(ARIMA_model)
 
 ```
 
-Implementación SARIMA:
+### Implementación SARIMA:
 
 ```{r}
 
@@ -320,6 +333,7 @@ SARIMA_model
 
 autoplot(SARIMA_model)
 
+checkresiduals(SARIMA_model)
 ```
 
 

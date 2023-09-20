@@ -101,7 +101,7 @@ plot(Seas_INPC)
 
 ```{r}
 
-view(Seas_INPC)
+#view(Seas_INPC)
 
 ```
 
