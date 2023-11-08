@@ -95,7 +95,7 @@ Datos <- data.frame(cbind(DLINPC, DLTC, DLCETE28, DLIGAE, DLIPI))
 ### 2
 ```{r}
 
-Datos <- ts(Datos[2 : 270, ], 
+Datos <- ts(Datos[2 : 282, ], 
             start = c(2000, 2), freq = 12)
 ```
 

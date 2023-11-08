@@ -61,23 +61,23 @@ head(Datos_Ad)
 
 ```{r}
 
-DLINPC <- ts(log(Datos_Ad$INPC_Ad) - lag(log(Datos_Ad$INPC_Ad), k = 1), 
+DLINPC <- ts(log(Datos_Ad$INPC_Ad) - lag(log(Datos_Ad$INPC_Ad), 1), 
              start = c(2000, 1), 
              freq = 12)
 
-DLTC <- ts(log(Datos_Ad$TC_Ad) - lag(log(Datos_Ad$TC_Ad), k = 1), 
+DLTC <- ts(log(Datos_Ad$TC_Ad) - lag(log(Datos_Ad$TC_Ad), 1), 
            start = c(2000, 1), 
            freq = 12)
 
-DLCETE28 <- ts(log(Datos_Ad$CETE28_Ad) - lag(log(Datos_Ad$CETE28_Ad), k = 1), 
+DLCETE28 <- ts(log(Datos_Ad$CETE28_Ad) - lag(log(Datos_Ad$CETE28_Ad), 1), 
                start = c(2000, 1), 
                freq = 12)
 
-DLIGAE <- ts(log(Datos_Ad$IGAE_Ad) - lag(log(Datos_Ad$IGAE_Ad), k = 1), 
+DLIGAE <- ts(log(Datos_Ad$IGAE_Ad) - lag(log(Datos_Ad$IGAE_Ad), 1), 
              start = c(2000, 1), 
              freq = 12)
 
-DLIPI <- ts(log(Datos_Ad$IPI_Ad) - lag(log(Datos_Ad$IPI_Ad), k = 1), 
+DLIPI <- ts(log(Datos_Ad$IPI_Ad) - lag(log(Datos_Ad$IPI_Ad), 1), 
             start = c(2000, 1), 
             freq = 12)
 
@@ -95,7 +95,7 @@ Datos <- data.frame(cbind(DLINPC, DLTC, DLCETE28, DLIGAE, DLIPI))
 ### 2
 ```{r}
 
-Datos <- ts(Datos[2 : 259, ], 
+Datos <- ts(Datos[2 : 282, ], 
             start = c(2000, 2), freq = 12)
 ```
 
