@@ -153,8 +153,8 @@ summary(ur.df(DLDatos[, 2], type = "none", lags = 0))
 ## Augmented Dickey - Fuller
 
 p = int{4*(T/100)^(1/4)}
-   = int{4*(270/100)^(1/4)}
-   = int{5.12}
+   = int{4*(282/100)^(1/4)}
+   = int{5.18}
    = 5
 
 ### NIVELES: Tipo de cambio

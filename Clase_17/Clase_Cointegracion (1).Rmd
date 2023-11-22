@@ -1,7 +1,7 @@
 ---
 title: "Clase 17. Cointegracion (1)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "13/11/2021"
+date: "13/11/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -53,7 +53,7 @@ Los datos "cargados" son los originales y los ajustados por estacionalidad. Los 
 
 load("Datos_Ad.RData")
 
-head(Datos_Ad)
+tail(Datos_Ad)
 
 ```
 
@@ -105,8 +105,8 @@ plot(cbind(LDatos, DLDatos),
 ## ADF: Augmented Dickey - Fuller Test
 ur.df = function (y, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC")) 
 p = int{4*(T/100)^(1/4)}
-  = int{4*(234/100)^(1/4)}
-  = int{5.0744}
+  = int{4*(282/100)^(1/4)}
+  = int{5.18349}
   = 5
 
 ### INPC
@@ -258,7 +258,7 @@ VARselect(LDatos, lag.max = 10, type = "none")
 
 ```{r}
 
-VAR_1 <- VAR(LDatos, p = 2, type = "both")
+VAR_1 <- VAR(LDatos, p = 3, type = "both")
 
 summary(VAR_1)
 

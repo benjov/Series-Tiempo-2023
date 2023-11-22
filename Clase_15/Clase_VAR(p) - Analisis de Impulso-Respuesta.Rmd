@@ -166,14 +166,14 @@ serial.test(VAR_p, lags.bg = 6, type = "BG")
 #### Homocedasticidad:
 ```{r }
 
-arch.test(VAR_p, lags.multi = 2)
+arch.test(VAR_p, lags.multi = 6)
 
 ```
 
 ### Impulse Response:
 ```{r }
 
-? irf
+?irf
 
 #
 
