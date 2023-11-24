@@ -1,7 +1,7 @@
 ---
 title: "Clase 18. Cointegracion (2)"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
-date: "17/11/2021"
+date: "17/11/2023"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -86,8 +86,6 @@ plot(cbind(LDatos, DLDatos),
 
 ## Condicional en que todas las series son I(1)
  
- 
- 
 ## VAR Selection:
 
 ```{r}
@@ -111,11 +109,11 @@ dumvar = NULL)
 
 ```{r}
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "trend", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "trend", K = 3, spec = "longrun"))
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "const", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "const", K = 3, spec = "longrun"))
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "none", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "none", K = 3, spec = "longrun"))
 
 ```
 
@@ -123,17 +121,19 @@ summary(ca.jo(LDatos, type = "trace", ecdet = "none", K = 2, spec = "longrun"))
 
 ```{r}
 
-summary(ca.jo(LDatos, type = "eigen", ecdet = "trend", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "eigen", ecdet = "trend", K = 3, spec = "longrun"))
 
-summary(ca.jo(LDatos, type = "eigen", ecdet = "const", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "eigen", ecdet = "const", K = 3, spec = "longrun"))
 
-summary(ca.jo(LDatos, type = "eigen", ecdet = "none", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "eigen", ecdet = "none", K = 3, spec = "longrun"))
 
 ```
 
+## Modelo seleccionado:
+
 ```{r}
 
-CA_1 <- ca.jo(LDatos, type = "trace", ecdet = "const", K = 2, spec = "longrun")
+CA_1 <- ca.jo(LDatos, type = "trace", ecdet = "const", K = 3, spec = "longrun")
 
 summary(CA_1)
 

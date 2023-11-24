@@ -281,19 +281,19 @@ dumvar = NULL)
 
 ```{r}
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "trend", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "trend", K = 3, spec = "longrun"))
 
 ```
 
 ```{r}
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "const", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "const", K = 3, spec = "longrun"))
 
 ```
 
 ```{r}
 
-summary(ca.jo(LDatos, type = "trace", ecdet = "none", K = 2, spec = "longrun"))
+summary(ca.jo(LDatos, type = "trace", ecdet = "none", K = 3, spec = "longrun"))
 
 ```
 
