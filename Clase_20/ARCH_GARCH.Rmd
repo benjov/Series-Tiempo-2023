@@ -114,36 +114,6 @@ $H_o: K=S=0$
 jarque.test(vector_ret)
 ```
 
-## Calcular VaR para una distribución t
-
-Como sabemos la distribución normal es un caso particular de la distribución t de student, correspondiente a un caso en el que los Grados de Libertad (_df_) tienden a infinito. Mediante el método de máxima verosimilitud nos aproximamos a una distribución t de student que describe mejor el comportamiento de los retornos de este activo. 
-
-```{r message=FALSE, warning=FALSE}
-t.fit <-fitdistr(vector_ret, "t")
-round(t.fit$estimate, 6)
-
-#install.packages("metRology")
-library(metRology)
-alpha <- 0.05
-set.seed(1289)
-rvec <- rt.scaled(length(logret), mean=t.fit$estimate[1],
-                  sd = t.fit$estimate[2],
-                  df = t.fit$estimate[3])
-
-VaR <- quantile(rvec, alpha)
-round(VaR, 6)
-
-```
-
-```{r}
-ggplot()+
-  geom_density(aes(logret, geom ='density', col = 'returns'))+
-  geom_density(aes(normal_dist, col = 'normal'))+
-    geom_density(aes(rvec, col = 't_simulated'))
-
-
-```
-
 # ARCH 
 
 Hasta ahora las distribuciones utilizadas para medir el Valor en Riesgo de este activo, asumen que no existe correlación serial en los retornos diarios de este activo. Observemos un par de gráficas de la función de autocorrelación para corroborar este hecho. 
@@ -162,7 +132,7 @@ acf(abs(logret))
 Otra manera de corroborar esta idea, es volviendo IID nuestra serie de datos y observar que de este modo se pierde la autocorrelación serial, lo que refuerza la idea de que en esta serie existen clusters de volatilidad. 
 
 ```{r}
-logret_random <- sample(as.vector(logret),size =  length(logret), replace = FALSE)
+logret_random <- sample(as.vector(logret), size =  length(logret), replace = FALSE)
 
 acf(abs(logret_random))
 

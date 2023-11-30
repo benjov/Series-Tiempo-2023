@@ -1,5 +1,5 @@
 ---
-title: "Clase 20. Modelo ADRL"
+title: "Clase 19. Modelo ADRL"
 author: "Benjamin Oliva & Omar Alfaro-Rivera"
 date: "30/11/2023"
 output: html_document
