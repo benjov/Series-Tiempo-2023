@@ -79,7 +79,7 @@ El Valor en Riesgo, básicamente es un cálculo que nos permite estimar el monto
 alpha <- 0.05
 VaR <- quantile(logret, alpha)
 
-round(VaR, 4)
+round(VaR, 4)*100
 
 qplot(logret , geom = 'histogram') + geom_histogram(fill = 'lightblue' , bins = 30) +
   geom_histogram(aes(logret[logret < quantile(logret , 0.05)]) , fill = 'red' , bins = 30) +
