@@ -131,6 +131,7 @@ acf(logret)
 La idea de clusterización de volatilidad, asume que periodos de alta volatilidad serán seguidos por una alta volatilidad y viceversa. Por esta razón la función de autocorrelación útil para saber si existen clusters de volatilidad es utilizando el valor absoluto, ya que lo que importa es saber si la serie está autocorrelacionada en la magnitud de los movimientos. 
 
 ```{r}
+plot(abs(logret))
 acf(abs(logret))
 ```
 
@@ -171,7 +172,7 @@ ArchTest(logret, lags = 1, demean = TRUE)
 
 $Y_t = \mu+\sqrt{h_t}\varepsilon_t$
 
-$h_t = \omega+\alpha_i\varepsilon^2_{t-i}+u_t$
+$h_t = \omega+\alpha_ih_{t-i}+u_t$
 
 $\varepsilon$~$N(0,1)$
 
@@ -257,7 +258,7 @@ Lag_Opt_GARCH(ehatsq,4,4)
 
 # Estimación de modelo óptimo 
 
-model.spec = ugarchspec(variance.model = list(model = 'sGARCH' , garchOrder = c(4,3)), 
+model.spec = ugarchspec(variance.model = list(model = 'sGARCH' , garchOrder = c(4,2)), 
                         mean.model = list(armaOrder = c(2,0)), distribution.model = "std")
 
 
