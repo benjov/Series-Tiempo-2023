@@ -36,65 +36,11 @@ options(scipen = 4)
 
 ```{r, echo=FALSE, warning=FALSE}
 
-Data = read_excel("Datos_GARCH.xlsx")
+Data = read_excel("Datos_1200_V2.xls")
 
 head(Data)
 
 ```
-
-```{r }
-#
-xspec = ugarchspec( mean.model = list(armaOrder = c(3, 0)), 
-                    variance.model = list(garchOrder = c(1,1), model = 'sGARCH'), 
-                    distribution.model = 'norm')
-#
-uspec = multispec(replicate(3, xspec))
-#
-spec1 = dccspec(uspec = uspec, dccOrder = c(1, 1), distribution = 'mvnorm')
-spec1a = dccspec(uspec = uspec, dccOrder = c(1, 1), model='aDCC', distribution = 'mvnorm')
-
-# 
-Data[, c("DLIGAE_MX1200", "DLPPI_MX1200", "DLTC1200")]
-
-summary(mgarch_model)
-```
-
-```{r}
-xspec = ugarchspec(mean.model = list(armaOrder = c(1, 1)), variance.model = list(garchOrder = c(1,1), model = 'sGARCH'), distribution.model = 'norm')
-uspec = multispec(replicate(3, xspec))
-spec1 = dccspec(uspec = uspec, dccOrder = c(1, 1), distribution = 'mvnorm')
-spec1a = dccspec(uspec = uspec, dccOrder = c(1, 1), model='aDCC', distribution = 'mvnorm')
-```
-
-```{r}
-cl = makePSOCKcluster(3)
-multf = multifit(uspec, returns, cluster = cl)
-```
-
-```{r}
-fit1 = dccfit(spec1, data = returns, fit.control = list(eval.se = TRUE, scale = TRUE), fit = multf, cluster = cl)
-print(fit1)           
-
-```
-
-
-```{r}
-
-
-
-plot(fit1, which=1)
-plot(fit1, which=2)
-plot(fit1, which=3)
-plot(fit1, which=4)
-plot(fit1, which=5)
-
-
-```
-
-
-
-
-
 
 ## Función de Verosimilirud
 
@@ -168,10 +114,11 @@ llk_M_Garch_M_V1 <- function(B, Yt, Yt_1, Yt_2, Yt_3, Zt) {
     #
     llkt <- -llkt
     LLK <- LLK + llkt
-    print(Ht)
-    print(ginv(Ht))
-    print( Ut %*% ginv(Ht) %*% t(Ut) )
-    print(t)
+    # print(Ht)
+    # print(ginv(Ht))
+    # print( Ut %*% ginv(Ht) %*% t(Ut) )
+    # print(t)
+    print(LLK)
   }
   #
   llkGARCHM <- LLK
@@ -218,7 +165,7 @@ llk_M_Garch_M_V1 <- function(B, Yt, Yt_1, Yt_2, Yt_3, Zt) {
   }
 
   # Opciones de optimización
-  options <- list(maxit = 1 , reltol = 1e-10)
+  options <- list(reltol = 1e-10)
 
   # Optimización
   optim_result <- optim(B0, L, gr = "BFGS",
